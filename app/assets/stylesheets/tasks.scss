@@ -34,10 +34,18 @@ body {
     display: inline-block;
   }
 
+  .list-inline a, form {
+    display: inline-block;
+  }
+
   .add_task input {
     margin: 12px 0 12px 0;
     border: 1px solid rgb(200, 200, 200);
     border-radius: 2px;
+  }
+
+  li {
+    margin-top: 20px;
   }
 
   h1, h2 {

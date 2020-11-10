@@ -3,12 +3,14 @@
 
   <ul>
     <% @tasks.each do |task| %>
-      <li > <%= link_to task.title, task_path(task) %>
+      <li class="list-inline">
         <%= form_for(task) do |f| %>
         <%= f.check_box :completed %>
         <% end %>
-        </li>
+        <%= link_to task.title, task_path(task) %>
+        <%= link_to "🗑", task_path(task), method: :delete %>
+      </li>
     <% end %>
   </ul>
-  <h2 class="add_task"><%= link_to "+ Add new task", "/tasks/new" %></h2>
+  <p class="back_to_home"><%= link_to "Add new Task", "/tasks/new" %></p>
 </div>
