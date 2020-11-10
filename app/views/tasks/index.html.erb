@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Task manager</h1>
+
+  <ul>
+    <% @tasks.each do |task| %>
+      <li > <%= link_to task.title, task_path(task) %>
+        <%= form_for(task) do |f| %>
+        <%= f.check_box :completed %>
+        <% end %>
+        </li>
+    <% end %>
+  </ul>
+  <h2 class="add_task"><%= link_to "+ Add new task", "/tasks/new" %></h2>
+</div>

@@ -1,0 +1,17 @@
+<div class="container">
+  <h2><%= @task.title %></h2>
+  <p class="task_details"><%= @task.details %></p>
+  <ul>
+    <li class="list-inline">
+        <%= form_for(@task) do |f| %>
+          <% if @task.completed? %>
+          <%= "This task is already completed." %>
+          <% else %>
+          <%= "This task is not completed yet." %>
+          <% end %>
+        <%= f.check_box :completed %>
+        <% end %>
+    </li>
+    <p class="back_to_home"><%= link_to "Go Back to List", "/tasks" %></p>
+  </ul>
+</div>
